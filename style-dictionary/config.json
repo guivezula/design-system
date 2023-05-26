@@ -2,11 +2,23 @@
     "source": ["./style-dictionary/*.json"],
     "platforms": {
       "js": {
+        "basePxFontSize": 16,
+        "transform": ["size/remToPx"],
         "transformGroup": "js",
         "buildPath": "./src/assets/",
         "files": [{
           "destination": "variables.js",
           "format": "javascript/es6"
+        }]
+      },
+      "scss": {
+        "basePxFontSize": 16,
+        "transform": ["size/remToPx"],
+        "transformGroup": "scss",
+        "buildPath": "./src/assets/",
+        "files": [{
+          "destination": "variables.scss",
+          "format": "scss/map-deep"
         }]
       }
     }

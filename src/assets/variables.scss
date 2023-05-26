@@ -1,0 +1,280 @@
+
+/**
+ * Do not edit directly
+ * Generated on Fri, 26 May 2023 02:45:46 GMT
+ */
+
+$border-size-none: 0rem !default;
+$border-size-hairline: 1rem !default;
+$border-size-thin: 2rem !default;
+$border-size-thick: 4rem !default;
+$border-size-heavy: 8rem !default;
+$opacity-level-semiopaque: 0.80 !default;
+$opacity-level-intense: 0.64 !default;
+$opacity-level-medium: 0.32 !default;
+$opacity-level-light: 0.16 !default;
+$opacity-level-semitransparent: 0.08 !default;
+$shadow-level-1-x: 0rem !default;
+$shadow-level-1-y: 4rem !default;
+$shadow-level-1-b: 8rem !default;
+$shadow-level-1-stack: 0rem !default;
+$shadow-level-2-x: 0rem !default;
+$shadow-level-2-y: 8rem !default;
+$shadow-level-2-b: 24rem !default;
+$shadow-level-2-stack: 0rem !default;
+$shadow-level-3-x: 0rem !default;
+$shadow-level-3-y: 16rem !default;
+$shadow-level-3-b: 32rem !default;
+$shadow-level-3-stack: 0rem !default;
+$shadow-level-4-x: 0rem !default;
+$shadow-level-4-y: 16rem !default;
+$shadow-level-4-b: 48rem !default;
+$shadow-level-4-stack: 0rem !default;
+$spacing-size-quarck: 4rem !default;
+$spacing-size-nano: 8rem !default;
+$spacing-size-xxxs: 16rem !default;
+$spacing-size-xxs: 24rem !default;
+$spacing-size-xs: 32rem !default;
+$spacing-size-sm: 40rem !default;
+$spacing-size-md: 48rem !default;
+$spacing-size-lg: 56rem !default;
+$spacing-size-xl: 64rem !default;
+$spacing-size-xxl: 80rem !default;
+$spacing-size-xxxl: 120rem !default;
+$spacing-size-huge: 160rem !default;
+$spacing-size-giant: 200rem !default;
+$spacing-squish-size-quarck-v: 4rem !default;
+$spacing-squish-size-quarck-h: 8rem !default;
+$spacing-squish-size-quarck-stack: 4rem !default;
+$spacing-squish-size-nano-v: 8rem !default;
+$spacing-squish-size-nano-h: 16rem !default;
+$spacing-squish-size-nano-stack: 8rem !default;
+$spacing-squish-size-xs-v: 16rem !default;
+$spacing-squish-size-xs-h: 24rem !default;
+$spacing-squish-size-xs-stack: 16rem !default;
+$spacing-squish-size-sm-v: 16rem !default;
+$spacing-squish-size-sm-h: 32rem !default;
+$spacing-squish-size-sm-stack: 16rem !default;
+$radius-size-none: 0rem !default;
+$radius-size-sm: 8rem !default;
+$radius-size-md: 16rem !default;
+$radius-size-lg: 24rem !default;
+$radius-size-pill: 500rem !default;
+$radius-size-circular: 50rem !default;
+$font-size-xxxs: 12rem !default;
+$font-size-xxs: 14rem !default;
+$font-size-xs: 16rem !default;
+$font-size-sm: 20rem !default;
+$font-size-md: 24rem !default;
+$font-size-lg: 32rem !default;
+$font-size-xl: 40rem !default;
+$font-size-xxl: 48rem !default;
+$font-size-xxxl: 64rem !default;
+$font-size-display: 80rem !default;
+$font-size-giant: 96rem !default;
+$font-family-highlight: 'Archivo' !default;
+$font-weight-bold: 700 !default;
+$font-weight-medium: 600 !default;
+$font-weight-regular: 400 !default;
+$line-height-tight: 100% !default;
+$line-height-medium: 110% !default;
+$line-height-distant: 150% !default;
+$line-height-superdistant: 200% !default;
+$brand-color-primary-1: #fef0ec !default;
+$brand-color-primary-2: #fbd1c6 !default;
+$brand-color-primary-3: #f04e23 !default;
+$brand-color-primary-4: #8f260a !default;
+$brand-color-primary-5: #691c07 !default;
+$neutral-color-1: #ffffff !default;
+$neutral-color-2: #e4e5e7 !default;
+$neutral-color-3: #a6aaaf !default;
+$neutral-color-4: #70747b !default;
+$neutral-color-5: #000000 !default;
+
+$tokens: (
+  'source': (
+    '0': './style-dictionary/*.json'
+  ),
+  'platforms': (
+    'js': (
+      'basePxFontSize': (
+
+      ),
+      'transform': (
+        '0': 'size/remToPx'
+      ),
+      'transformGroup': 'js',
+      'buildPath': './src/assets/',
+      'files': (
+        '0': (
+          'destination': 'variables.js',
+          'format': 'javascript/es6'
+        )
+      )
+    ),
+    'scss': (
+      'basePxFontSize': (
+
+      ),
+      'transform': (
+        '0': 'size/remToPx'
+      ),
+      'transformGroup': 'scss',
+      'buildPath': './src/assets/',
+      'files': (
+        '0': (
+          'destination': 'variables.scss',
+          'format': 'scss/map-deep'
+        )
+      )
+    )
+  ),
+  'border': (
+    'size': (
+      'none': $border-size-none,
+      'hairline': $border-size-hairline,
+      'thin': $border-size-thin,
+      'thick': $border-size-thick,
+      'heavy': $border-size-heavy
+    )
+  ),
+  'opacity': (
+    'level': (
+      'semiopaque': $opacity-level-semiopaque,
+      'intense': $opacity-level-intense,
+      'medium': $opacity-level-medium,
+      'light': $opacity-level-light,
+      'semitransparent': $opacity-level-semitransparent
+    )
+  ),
+  'shadow': (
+    'level': (
+      '1': (
+        'x': $shadow-level-1-x,
+        'y': $shadow-level-1-y,
+        'b': $shadow-level-1-b,
+        'stack': $shadow-level-1-stack
+      ),
+      '2': (
+        'x': $shadow-level-2-x,
+        'y': $shadow-level-2-y,
+        'b': $shadow-level-2-b,
+        'stack': $shadow-level-2-stack
+      ),
+      '3': (
+        'x': $shadow-level-3-x,
+        'y': $shadow-level-3-y,
+        'b': $shadow-level-3-b,
+        'stack': $shadow-level-3-stack
+      ),
+      '4': (
+        'x': $shadow-level-4-x,
+        'y': $shadow-level-4-y,
+        'b': $shadow-level-4-b,
+        'stack': $shadow-level-4-stack
+      )
+    )
+  ),
+  'spacing': (
+    'size': (
+      'quarck': $spacing-size-quarck,
+      'nano': $spacing-size-nano,
+      'xxxs': $spacing-size-xxxs,
+      'xxs': $spacing-size-xxs,
+      'xs': $spacing-size-xs,
+      'sm': $spacing-size-sm,
+      'md': $spacing-size-md,
+      'lg': $spacing-size-lg,
+      'xl': $spacing-size-xl,
+      'xxl': $spacing-size-xxl,
+      'xxxl': $spacing-size-xxxl,
+      'huge': $spacing-size-huge,
+      'giant': $spacing-size-giant
+    )
+  ),
+  'spacing_squish': (
+    'size': (
+      'quarck': (
+        'v': $spacing-squish-size-quarck-v,
+        'h': $spacing-squish-size-quarck-h,
+        'stack': $spacing-squish-size-quarck-stack
+      ),
+      'nano': (
+        'v': $spacing-squish-size-nano-v,
+        'h': $spacing-squish-size-nano-h,
+        'stack': $spacing-squish-size-nano-stack
+      ),
+      'xs': (
+        'v': $spacing-squish-size-xs-v,
+        'h': $spacing-squish-size-xs-h,
+        'stack': $spacing-squish-size-xs-stack
+      ),
+      'sm': (
+        'v': $spacing-squish-size-sm-v,
+        'h': $spacing-squish-size-sm-h,
+        'stack': $spacing-squish-size-sm-stack
+      )
+    )
+  ),
+  'radius': (
+    'size': (
+      'none': $radius-size-none,
+      'sm': $radius-size-sm,
+      'md': $radius-size-md,
+      'lg': $radius-size-lg,
+      'pill': $radius-size-pill,
+      'circular': $radius-size-circular
+    )
+  ),
+  'font': (
+    'size': (
+      'xxxs': $font-size-xxxs,
+      'xxs': $font-size-xxs,
+      'xs': $font-size-xs,
+      'sm': $font-size-sm,
+      'md': $font-size-md,
+      'lg': $font-size-lg,
+      'xl': $font-size-xl,
+      'xxl': $font-size-xxl,
+      'xxxl': $font-size-xxxl,
+      'display': $font-size-display,
+      'giant': $font-size-giant
+    ),
+    'family': (
+      'highlight': $font-family-highlight
+    ),
+    'weight': (
+      'bold': $font-weight-bold,
+      'medium': $font-weight-medium,
+      'regular': $font-weight-regular
+    )
+  ),
+  'line': (
+    'height': (
+      'tight': $line-height-tight,
+      'medium': $line-height-medium,
+      'distant': $line-height-distant,
+      'superdistant': $line-height-superdistant
+    )
+  ),
+  'brand': (
+    'color': (
+      'primary': (
+        '1': $brand-color-primary-1,
+        '2': $brand-color-primary-2,
+        '3': $brand-color-primary-3,
+        '4': $brand-color-primary-4,
+        '5': $brand-color-primary-5
+      )
+    )
+  ),
+  'neutral': (
+    'color': (
+      '1': $neutral-color-1,
+      '2': $neutral-color-2,
+      '3': $neutral-color-3,
+      '4': $neutral-color-4,
+      '5': $neutral-color-5
+    )
+  )
+);
