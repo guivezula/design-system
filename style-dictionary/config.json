@@ -1,0 +1,13 @@
+{
+    "source": ["./style-dictionary/*.json"],
+    "platforms": {
+      "js": {
+        "transformGroup": "js",
+        "buildPath": "./src/assets/",
+        "files": [{
+          "destination": "variables.js",
+          "format": "javascript/es6"
+        }]
+      }
+    }
+  }
