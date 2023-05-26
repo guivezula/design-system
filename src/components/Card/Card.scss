@@ -1,0 +1,9 @@
+@import "src/assets/variables.scss";
+
+$components: ('heading': $spacing-size-xxxs, 'subtitle': $spacing-size-xs, 'paragraph': $spacing-size-sm);
+
+@each $component, $spacing in $components {
+    .spacing-#{$component} {
+        margin-bottom: $spacing;
+    }
+}
