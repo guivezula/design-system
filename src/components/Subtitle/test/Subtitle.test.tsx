@@ -7,5 +7,5 @@ test("should render Subtitle", () => {
 
     const subtitle = screen.getByTestId("subtitle-component");
     expect(subtitle).toBeInTheDocument();
-    expect(subtitle).toHaveTextContent("Subtitle SM");
+    expect(subtitle).toHaveTextContent(Default.args.content);
 })

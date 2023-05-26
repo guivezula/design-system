@@ -7,5 +7,5 @@ test("should render Button", () => {
 
     const btnElm = screen.getByRole("button");
     expect(btnElm).toBeInTheDocument();
-    expect(btnElm).toHaveTextContent("Button Label");
+    expect(btnElm).toHaveTextContent(Default.args.label);
 })

@@ -8,3 +8,14 @@ test("should render Shape", () => {
     const shape = screen.getByTestId("shape-component");
     expect(shape).toBeInTheDocument();
 })
+
+test("should render Shape's children", () => {
+    render(
+        <Shape {...Default.args} >
+            <div>Any children</div>
+        </Shape>
+    );
+
+    const children = screen.getByText("Any children");
+    expect(children).toBeInTheDocument();
+})

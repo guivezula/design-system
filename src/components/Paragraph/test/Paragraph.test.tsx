@@ -7,4 +7,5 @@ test("should render Paragraph", () => {
 
     const paragraph = screen.getByTestId("paragraph-component");
     expect(paragraph).toBeInTheDocument();
+    expect(paragraph).toHaveTextContent(Default.args.content);
 })
