@@ -1,0 +1,9 @@
+@import "src/assets/variables.scss";
+
+.subtitle {
+  font-size: $font-size-md;
+  line-height: $line-height-medium;
+  font-family: $font-family-highlight;
+  font-weight: $font-weight-medium;
+  color: $neutral-color-4;
+}

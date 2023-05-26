@@ -5,9 +5,6 @@ const meta = {
   title: 'Components/Paragraph',
   component: Paragraph,
   tags: ['autodocs'],
-  parameters: {
-    layout: 'fullscreen',
-  },
 } satisfies Meta<typeof Paragraph>;
 
 export default meta;
