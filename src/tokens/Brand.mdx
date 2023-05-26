@@ -1,0 +1,101 @@
+import { Meta, ColorPalette, ColorItem, Typeset } from "@storybook/blocks";
+import {
+  BrandColorPrimary1,
+  BrandColorPrimary2,
+  BrandColorPrimary3,
+  BrandColorPrimary4,
+  BrandColorPrimary5,
+  NeutralColor1,
+  NeutralColor2,
+  NeutralColor3,
+  NeutralColor4,
+  NeutralColor5,
+  FontFamilyHighlight,
+  FontSizeXxxs,
+  FontSizeXxs,
+  FontSizeXs,
+  FontSizeSm,
+  FontSizeMd,
+  FontSizeLg,
+  FontSizeXl,
+  FontSizeXxl,
+  FontSizeXxxl,
+  FontSizeDisplay,
+  FontSizeGiant,
+} from "../assets/variables";
+
+<Meta title="Design Tokens/Brand Token" />
+
+export const typography = {
+  type: FontFamilyHighlight,
+  weight: {
+    regular: '400',
+    bold: '700',
+    extrabold: '800',
+    black: '900',
+  },
+  size: {
+    FontSizeXxxs: Number(FontSizeXxxs.slice(0, 2)),
+    FontSizeXxs: Number(FontSizeXxs.slice(0, 2)),
+    FontSizeXs: Number(FontSizeXs.slice(0, 2)),
+    FontSizeSm: Number(FontSizeSm.slice(0, 2)),
+    FontSizeMd: Number(FontSizeMd.slice(0, 2)),
+    FontSizeLg: Number(FontSizeLg.slice(0, 2)),
+    FontSizeXl: Number(FontSizeXl.slice(0, 2)),
+    FontSizeXxl: Number(FontSizeXxl.slice(0, 2)),
+    FontSizeXxxl: Number(FontSizeXxxl.slice(0, 2)),
+    FontSizeDisplay: Number(FontSizeDisplay.slice(0, 2)),
+    FontSizeGiant: Number(FontSizeGiant.slice(0, 2)),
+  },
+};
+
+export const SampleText = 'Aa - Highlight';
+
+# Typography
+
+<Typeset
+  fontSizes={[
+    typography.size.FontSizeXxxs,
+    typography.size.FontSizeXxs,
+    typography.size.FontSizeXs,
+    typography.size.FontSizeSm,
+    typography.size.FontSizeMd,
+    typography.size.FontSizeLg,
+    typography.size.FontSizeXl,
+    typography.size.FontSizeXxl,
+    typography.size.FontSizeXxxl,
+    typography.size.FontSizeDisplay,
+    typography.size.FontSizeGiant,
+  ]}
+  fontWeight={typography.weight.black}
+  sampleText={SampleText}
+  fontFamily={typography.type}
+/>
+
+# Brand Colors
+
+<ColorPalette>
+  <ColorItem
+    colors={{
+      "01": BrandColorPrimary1,
+      "02": BrandColorPrimary2,
+      "03": BrandColorPrimary3,
+      "04": BrandColorPrimary4,
+      "05": BrandColorPrimary5,
+    }}
+  />
+</ColorPalette>
+
+# Neutral Colors
+
+<ColorPalette>
+  <ColorItem
+    colors={{
+      "01": NeutralColor1,
+      "02": NeutralColor2,
+      "03": NeutralColor3,
+      "04": NeutralColor4,
+      "05": NeutralColor5,
+    }}
+  />
+</ColorPalette>
