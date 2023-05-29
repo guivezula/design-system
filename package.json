@@ -14,15 +14,14 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
-    "sass": "^1.62.1",
     "typescript": "^4.9.5",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
     "test": "react-scripts test",
+    "test:coverage": "react-scripts test -- --coverage",
     "storybook": "storybook dev -p 6006",
-    "style-dictionary": "npx style-dictionary build --config ./style-dictionary/config.json",
-    "build-storybook": "storybook build"
+    "style-dictionary": "npx style-dictionary build --config ./style-dictionary/config.json"
   },
   "eslintConfig": {
     "extends": [
@@ -56,6 +55,7 @@
     "babel-plugin-named-exports-order": "^0.0.2",
     "eslint-plugin-storybook": "^0.6.12",
     "prop-types": "^15.8.1",
+    "sass": "^1.62.1",
     "storybook": "^7.0.17",
     "style-dictionary": "^3.8.0",
     "webpack": "^5.84.0"
