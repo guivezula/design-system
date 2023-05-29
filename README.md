@@ -1,181 +1,57 @@
-# Basic Style Dictionary
+# Design System
 
-This example code is bare-bones to show you what this framework can do. If you have the style-dictionary module installed globally, you can `cd` into this directory and run:
-```bash
-style-dictionary build
-```
+## Visão Geral
 
-You should see something like this output:
-```
-Copying starter files...
+Esse projeto tem como objetivo exemplificar e apresentar um design system com alguns componentes básicos e como utilizar design tokens para estilizar os componentes. Nas próximas sessões serão apresentados mais informações do processo de desenvolvimento, bem como algumas considerações.
 
-Source style dictionary starter files created!
+## Scripts
 
-Running `style-dictionary build` for the first time to generate build artifacts.
+### `npm install`
 
+Instalar as dependencias do projeto
 
-scss
-✔︎  build/scss/_variables.scss
+### ` npm run style-dictionary`
 
-android
-✔︎  build/android/font_dimens.xml
-✔︎  build/android/colors.xml
+A partir do design token, esse comando gera o arquivo base de estilização
 
-compose
-✔︎ build/compose/StyleDictionaryColor.kt
-✔︎ build/compose/StyleDictionarySize.kt
+### ` npm run storybook`
 
-ios
-✔︎  build/ios/StyleDictionaryColor.h
-✔︎  build/ios/StyleDictionaryColor.m
-✔︎  build/ios/StyleDictionarySize.h
-✔︎  build/ios/StyleDictionarySize.m
+Roda o storybook para visualizar os componentes
 
-ios-swift
-✔︎  build/ios-swift/StyleDictionary.swift
+### ` npm run test`
 
-ios-swift-separate-enums
-✔︎  build/ios-swift/StyleDictionaryColor.swift
-✔︎  build/ios-swift/StyleDictionarySize.swift
-```
+Roda os testes de cada componente desenvolvido
 
-Good for you! You have now built your first style dictionary! Moving on, take a look at what we have built. This should have created a build directory and it should look like this:
-```
-├── README.md
-├── config.json
-├── tokens/
-│   ├── color/
-│       ├── base.json
-│       ├── font.json
-│   ├── size/
-│       ├── font.json
-├── build/
-│   ├── android/
-│      ├── font_dimens.xml
-│      ├── colors.xml
-│   ├── compose/
-│      ├── StyleDictionaryColor.kt
-│      ├── StyleDictionarySize.kt
-│   ├── scss/
-│      ├── _variables.scss
-│   ├── ios/
-│      ├── StyleDictionaryColor.h
-│      ├── StyleDictionaryColor.m
-│      ├── StyleDictionarySize.h
-│      ├── StyleDictionarySize.m
-│   ├── ios-swift/
-│      ├── StyleDictionary.swift
-│      ├── StyleDictionaryColor.swift
-│      ├── StyleDictionarySize.swift
-```
+### ` npm run test:coverage`
 
-If you open `config.json` you will see there are 5 platforms defined: scss, android, compose, ios, and ios-swift. Each platform has a transformGroup, buildPath, and files. The buildPath and files of the platform should match up to the files what were built. The files built should look like these:
+Também roda os testes de cada componente e exibe a cobertura dos testes
 
-**Android**
-```xml
-<!-- font_dimens.xml -->
-<resources>
-  <dimen name="size_font_small">12.00sp</dimen>
-  <dimen name="size_font_medium">16.00sp</dimen>
-  <dimen name="size_font_large">32.00sp</dimen>
-  <dimen name="size_font_base">16.00sp</dimen>
-</resources>
+## Desenvolvimento e Decisões
 
-<!-- colors.xml -->
-<resources>
-  <color name="color_base_gray_light">#ffcccccc</color>
-  <color name="color_base_gray_medium">#ff999999</color>
-  <color name="color_base_gray_dark">#ff111111</color>
-  <color name="color_base_red">#ffff0000</color>
-  <color name="color_base_green">#ff00ff00</color>
-  <color name="color_font_base">#ffff0000</color>
-  <color name="color_font_secondary">#ff00ff00</color>
-  <color name="color_font_tertiary">#ffcccccc</color>
-</resources>
-```
+Essa aplicação foi desenvolvida em React 18.2.7 com a versão do Node em 18.13.0, junto com Storybook CLI para exibição dos componentes.
 
-**Compose**
-```kotlin
-object StyleDictionaryColor {
-  val colorBaseGrayDark = Color(0xff111111)
-  val colorBaseGrayLight = Color(0xffcccccc)
-  val colorBaseGrayMedium = Color(0xff999999)
-  val colorBaseGreen = Color(0xff00ff00)
-  val colorBaseRed = Color(0xffff0000)
-  val colorFontBase = Color(0xffff0000)
-  val colorFontSecondary = Color(0xff00ff00)
-  val colorFontTertiary = Color(0xffcccccc)
-}
+Para estilização foi ultilizado o SASS apenas e não possuindo outra biblioteca de estilização. Por ser um projeto menor, se faria suficiente para o projeto, apenas utilizar o SASS junto com os tokens gerados pelo style-dictionary. De acordo com o crescimento do projeto, aconselho a utilização de outras bibliotecas como Styled Components ou TailwindCSS, para dinamizar a estilização dos componentes e reduzir o retrabalho.
 
-object StyleDictionarySize {
-  /** the base size of the font */
-  val sizeFontBase = 16.00.sp
-  /** the large size of the font */
-  val sizeFontLarge = 32.00.sp
-  /** the medium size of the font */
-  val sizeFontMedium = 16.00.sp
-  /** the small size of the font */
-  val sizeFontSmall = 12.00.sp
-}
-```
+Sobre a biblioteca Style Dictionary, não tinha utilzado antes então separei um dia para pesquisar sobre e saber como era seu funcionamento. Como sugerido na proposta do teste, eu utlizei o tokens.json como arquivo de entrada.
 
-**SCSS**
-```scss
-// variables.scss
-$color-base-gray-light: #cccccc;
-$color-base-gray-medium: #999999;
-$color-base-gray-dark: #111111;
-$color-base-red: #ff0000;
-$color-base-green: #00ff00;
-$color-font-base: #ff0000;
-$color-font-secondary: #00ff00;
-$color-font-tertiary: #cccccc;
-$size-font-small: 0.75rem;
-$size-font-medium: 1rem;
-$size-font-large: 2rem;
-$size-font-base: 1rem;
-```
+Por decidir utilizar SASS como folha de estilização, adicionei a configuração para gerar o arquivo variables.scss. Uma coisa muito importante, a biblioteca está gerando tudo corretamente, menos os valores que a entrada são como pixel. Ao gerar o arquivo, a biblioteca muda todos os values px para rem, mas sem converter o valor, só altera de px para rem. Por exemplo, se eu tinha um value: 16px, ele converte para 16rem, ou seja de forma erronea. Procurei por soluções, adicionei várias configurações para manter o valor como px, ou converter corretamente, mas todas sem sucesso. Por conta do pouco tempo para desenvolver, e apresentar em tempo hábil, eu manualmente só mudei no variables.scss valores que estavam como rem, para px novamente.
 
-**iOS**
-```objc
-#import "StyleDictionaryColor.h"
+Seria inviável se o design token fosse muito grande por exemplo, e se tivesse mais tempo para criar uma issue no repositório original, ou buscar uma solução. Para uma tomada de decisão imediata, só foram trocados esses valores. Posteriormente, pensar em mudar o token para rem para não haver esse problema se caso for ampliar esse projeto.
 
-@implementation StyleDictionaryColor
+Sobre o Storybook não houve nenhum problema, já que eu tinha utilizado anteriormente. Decidi desenvolver os componentes em React, e cada componente possui um teste unitário. Se for pensar em crescimento da aplicação e utilização futura, com os componentes testados individualmente, evitaria ter que testá-los novamente quando forem utilizados em uma aplicação.
 
-+ (UIColor *)color:(StyleDictionaryColorName)colorEnum{
-  return [[self values] objectAtIndex:colorEnum];
-}
+Os componentes e seus respectivos testes estão no diretório components, enquanto as Stories estão no diretório stories. Essa organização foi uma maneira de diferenciar do que são os componentes, seus estilos e testes. Do que vai ser exibido e compartilhado para as outras aplicações. Uma maneira que fica fácil de expandir no futuro se caso for aumentar o número de componentes.
 
-+ (NSArray *)values {
-  static NSArray* colorArray;
-  static dispatch_once_t onceToken;
+Por fim, uma visão geral sobre a estilização dos componentes. Para a estilização, foi considerado o inspect do Figma, pois algumas informações que estavam no design token do Figma estavam diferente do que aparecia no inspect, por exemplo, o tamanho da fonte do botão. $font-size-sm = 20px mas no inspect, font-size era 16px. Então para garantir uniformidade, decidi acompanhar o inspect.
 
-  dispatch_once(&onceToken, ^{
-    colorArray = @[
-[UIColor colorWithRed:0.800f green:0.800f blue:0.800f alpha:1.000f],
-[UIColor colorWithRed:0.600f green:0.600f blue:0.600f alpha:1.000f],
-[UIColor colorWithRed:0.067f green:0.067f blue:0.067f alpha:1.000f],
-[UIColor colorWithRed:1.000f green:0.000f blue:0.000f alpha:1.000f],
-[UIColor colorWithRed:0.000f green:1.000f blue:0.000f alpha:1.000f],
-[UIColor colorWithRed:1.000f green:0.000f blue:0.000f alpha:1.000f],
-[UIColor colorWithRed:0.000f green:1.000f blue:0.000f alpha:1.000f],
-[UIColor colorWithRed:0.800f green:0.800f blue:0.800f alpha:1.000f]
-    ];
-  });
+Outra decisão tomada foi em relação à altura do componente Shape, decidi colocar a altura com o min-height, considerando que o parágrafo pode ter um conteúdo maior, a altura do Shape acompanharia o conteúdo, se tivesse fixado a altura quebraria o design. Por possuir altura mínima fixa, se o parágrafo possuir um tamanho menor, o card sempre vai manter o mesmo tamanho, então o botão vai subir de acordo com o conteúdo. Desse modo, o design final do Shape, está de acordo com o design com o tamanho mínimo, principalmente na hora de ser exibida na story, mantendo-se mais próximo do design proposto.
 
-  return colorArray;
-}
+Outra coisa em relação ao Shape, foi a não utilização da propriedade box-sizing: border-box; pois afetava o resultado final do Card Content, ficando com uma altura maior do que o exemplo no Figma, mas o resultado final do Shape está considerando o tamanho do padding e das bordas. Contudo, não afeta o Card Content, tendo seu desenvolvimento fidedigno ao design, considerando as entradas padrão dada pelo design do Figma.
 
-@end
-```
+Portanto, em um ambiente de produção, todas essas dúvidas poderiam ser sanadas com o time de UX, antes que fossem entregues para aprovação, como: adicionar scroll no parágrafo, adicionar um "leia mais", ou adicioar um balão no hover, ou espandir o card de acordo com o conteúdo. As decisões tomadas, foram a partir do desenvolvimento que seria mais fácil de ser resolvido e que o design final do Card Content fosse mais próximo ao design.
 
-Pretty nifty! This shows a few things happening:
-1. The build system does a deep merge of all the token JSON files defined in the `source` attribute of `config.json`. This allows you to split up the token JSON files however you want. There are 2 JSON files with `color` as the top level key, but they get merged properly.
-1. The build system resolves references to other design tokens. `{size.font.medium.value}` gets resolved properly.
-1. The build system handles references to token values in other files as well as you can see in `tokens/color/font.json`.
+## Considerações Finais
 
-Now let's make a change and see how that affects things. Open up `tokens/color/base.json` and change `"#111111"` to `"#000000"`. After you make that change, save the file and re-run the build command `style-dictionary build`. Open up the build files and take a look.
+Apesar de não ter utilizado anteriormente design tokens, foi um aprendizado muito grande e enriquecedor ao ter que utilizar para esse projeto. Certamente é algo que vou considerar em projetos futuros, e aprender como integrar com outras bibliotecas de estilização para aumentar a reutilização dentro de um projeto. No geral, foi divertido e enriquecedor desenvolver esse projeto integrando Style Dictionary com React e Storybook.
 
-**Huzzah!**
-
-Now go forth and create! Take a look at all the built-in [transforms](https://amzn.github.io/style-dictionary/#/transforms?id=pre-defined-transforms) and [formats](https://amzn.github.io/style-dictionary/#/formats?id=pre-defined-formats).
+Para finalizar, uma maneira de otimizar a manutenção e a qualidade do código seria como eu mencionei posteriormente, integrar o Style Dictionary com outras folhas de estilo como Styled Components e TailwindCSS, além de corrigir o problema de conversão errada ao gerar os arquivos de folha de estilo. Manter a cobertura de testes sempre alta para garantir a qualidade do código, manter uma dinâmica de revisão de código, seja através de Pull Request, seja através de Pareamento, como o time achar a melhor maneira de manter escalável o projeto.
