@@ -107,22 +107,6 @@ $tokens: (
     '0': './style-dictionary/*.json'
   ),
   'platforms': (
-    'js': (
-      'basePxFontSize': (
-
-      ),
-      'transform': (
-        '0': 'size/pxToPx'
-      ),
-      'transformGroup': 'js',
-      'buildPath': './src/assets/',
-      'files': (
-        '0': (
-          'destination': 'variables.js',
-          'format': 'javascript/es6'
-        )
-      )
-    ),
     'scss': (
       'basePxFontSize': (
 
