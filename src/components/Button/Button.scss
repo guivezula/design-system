@@ -1,11 +1,11 @@
-@import "src/assets/variables.scss";
+@import "src/assets/global.scss";
 
 .button-primary {
-   font-size: $font-size-sm; 
+   font-size: $font-size-xs; 
    line-height: $line-height-tight;
    border-radius: $radius-size-none;
    border: $border-size-none;
-   padding: $spacing-squish-size-xs-v $spacing-squish-size-xs-h;
+   padding: $spacing-squish-size-sm-v $spacing-squish-size-sm-h;
    font-family: $font-family-highlight;
    font-weight: $font-weight-medium;
    color: $neutral-color-1;

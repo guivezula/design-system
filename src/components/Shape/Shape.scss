@@ -1,4 +1,4 @@
-@import "src/assets/variables.scss";
+@import "src/assets/global.scss";
 
 .shape {
   border-radius: $radius-size-none;
@@ -7,4 +7,6 @@
   border-style: solid;
   border-color: $neutral-color-2;
   background-color: $neutral-color-1;
+  width: 300px;
+  min-height: 427px;
 }
